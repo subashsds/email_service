@@ -31,18 +31,27 @@ public class EmailService {
 	@Autowired
 	RestTemplate restTemplate;
 	
-	public @ResponseBody String sendEmail(HashMap<String, String> username) throws ConnectException {
+	public  String sendEmail(HashMap<String, String> username) throws ConnectException {
+		String response = null;
 		try {
 			Thread.sleep(50);
 		} catch (Exception ex) {
 
 		}
-		
-		if("participant1".equals(username.get("username"))) {
+		if("employee1".equals(username.get("username"))) {
+			LOG.info("Email Sent Successfully !");
+			response ="success";
+			
+		}else if("participant1".equals(username.get("username"))) {
+			LOG.info("Email Sent Successfully !");
+			response ="success";
+		}else {
+			LOG.info("Email Sent Failed !");
+			response ="failed";
 			throw new ConnectException("Signals that an error occurred while attempting to connect a socket to a remote address and port. Typically, the connection was refused remotely");	
 		}
+		return response;
 		
-		return "Email Send Successfully".toString();
 	}
 
 	public ErrorMsg error(Integer code,String message) {

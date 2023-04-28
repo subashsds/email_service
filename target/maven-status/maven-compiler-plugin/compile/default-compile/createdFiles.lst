@@ -1,0 +1,8 @@
+com\slavic\exception\ConnectException.class
+com\slavic\dto\ErrorMsg.class
+com\slavic\EmailServiceApplication.class
+com\slavic\controller\EmailController.class
+com\slavic\dto\req\Login.class
+com\slavic\dto\Response.class
+com\slavic\config\Appconfig.class
+com\slavic\service\EmailService.class
